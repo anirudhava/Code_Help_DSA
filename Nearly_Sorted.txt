@@ -1,0 +1,13 @@
+Given an array of n elements, where each element is at most k away from its target position. The task is to print array in sorted form.
+
+Insertion sort:
+---------------
+Inner loop runs for atmost k times and outer loop for n times thus,O(n*k)
+
+Using Heap:
+-------------
+1)Form a min heap of size k+1 with first k+1 elements-----------------O(k)
+2)(delete from min heap)move the topmost element(min) to the ith of the array.[i:0 to n-1]---O(log k)
+3)(insert into min heap)move the next element of the array into the min heap---------------O(log k)
+
+O(k)+O((n-k)*2log(k))

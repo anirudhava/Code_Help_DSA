@@ -1,0 +1,33 @@
+
+    1.Closest person to the bike, get the bike at the first priority.
+    2.Single bike can't be assigned to 2 individuals
+    3.Distance of a bike from one individual will never be equal to distance of the same bike from a different individual.
+    4.Distances can be equal, but 2 different bikes and 2 different individuals
+
+
+Person = P
+Bike = B
+
+soln:
+-----------------------------------------------------------------------------------------------
+create 4 arrays
+
+bike_pos_x      |
+bike_pos_y	|
+person_pos_x	|O(n) space
+person_pos_y	|
+
+1)go through the matrix n*m first----------------------------------------O(n*m) time
+  -when you come across a P store the position (x,y)
+   x in person_pos_x and y in person_pos_y both at the same index
+  -when you come across a B store the position (x,y)
+   x in bike_pos_x and y in bike_pos_y both at the same index
+
+2)Use Euclidean distance formula
+
+  d=( (x2-x1)^2 + (y2-y1)^2 )^(.5)
+	
+  for each of the person ----O(n^2)	
+	for each of the bike
+		find dist
+	assign min distance
